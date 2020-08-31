@@ -1,35 +1,42 @@
 package com.bridgelabz.generics;
 
-public class FindMax<E extends Comparable> {
-    E[] values;
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
 
+/*
+ * Generic Class To Find Max Values
+ */
+public class FindMax<E extends Comparable<E>> {
+    //Array of Generic values
+    E[] values;
+    //List of Generic Values
+    List<E> listValues = new LinkedList<>();
+
+    //Constructor to Initialize Generic Array
     public FindMax(E[] values) {
         this.values = values;
     }
 
-    public <E extends Comparable> E findMaxValue() {
-        E max = (E) values[0];
-        if (values[1].compareTo(max) > 0) {
-            max = (E) values[1];
-        }
-        if (values[2].compareTo(max) > 0) {
-            max = (E) values[2];
-        }
-        printMax(max);
-        return max;
+    //Constructor to Initialize Generic List
+    public FindMax(List<E> listValues) {
+        this.listValues = listValues;
     }
 
-    /*
-     * Generic Method to Find the Max Value of passed Arguments
-     **/
-    public static <E> void printMax(E max) {
-        System.out.println("Max Value = " + max);
+    //Method to Find  Max Value From List
+    public E findMax() {
+        return Collections.max(listValues);
     }
 
-    public static void main(String[] args) {
-        Integer[] values = {10, 20, 30};
-        String[] values2 = {"200", "15", "1000"};
-        new FindMax<String>(values2).findMaxValue();
-        new FindMax<Integer>(values).findMaxValue();
+    //Method to Find Max Value Form Array
+    public E findMaxValue() {
+        if (values[0].compareTo(values[1]) > 0 && values[0].compareTo(values[2]) > 0) {
+            return values[0];
+        } else if (values[1].compareTo(values[0]) > 0 && values[1].compareTo(values[2]) > 0) {
+            return values[1];
+        } else {
+            return values[2];
+        }
     }
+
 }
