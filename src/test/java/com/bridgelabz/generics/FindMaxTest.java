@@ -23,4 +23,10 @@ public class FindMaxTest {
         Integer max = findMax.findMaxValue(10,200,150);
         Assert.assertEquals((Integer) 200,max);
     }
+
+    @Test
+    public void givenThirdNumberAsMaximum_ShouldReturnThirdNumberAsMaximum() {
+        Integer max = findMax.findMaxValue(10,20,60);
+        Assert.assertEquals((Integer) 60,max);
+    }
 }
