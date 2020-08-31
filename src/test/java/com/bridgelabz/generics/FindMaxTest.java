@@ -13,26 +13,32 @@ public class FindMaxTest {
     }
 
     @Test
-    public void givenFirstNumberAsMaximum_ShouldReturnFirstNumberAsMax() {
+    public void givenFirstIntegerAsMaximum_ShouldReturnFirstIntegerAsMax() {
         Integer max = findMax.findMaxValue(200, 25, 105);
         Assert.assertEquals((Integer) 200, max);
     }
 
     @Test
-    public void givenSecondNumberAsMaximum_ShouldReturnSecondNumberAsMaximum() {
-        Integer max = findMax.findMaxValue(10,200,150);
-        Assert.assertEquals((Integer) 200,max);
+    public void givenSecondIntegerAsMaximum_ShouldReturnSecondIntegerAsMaximum() {
+        Integer max = findMax.findMaxValue(10, 200, 150);
+        Assert.assertEquals((Integer) 200, max);
     }
 
     @Test
-    public void givenThirdNumberAsMaximum_ShouldReturnThirdNumberAsMaximum() {
-        Integer max = findMax.findMaxValue(10,20,60);
-        Assert.assertEquals((Integer) 60,max);
+    public void givenThirdIntegerAsMaximum_ShouldReturnThirdIntegerAsMaximum() {
+        Integer max = findMax.findMaxValue(10, 20, 60);
+        Assert.assertEquals((Integer) 60, max);
     }
 
     @Test
-    public void givenFirstNumberAsMaximum_ShouldReturnFirstNumberAsMaximum() {
-        Float max = findMax.findMaxValue(20f,15f,10f);
-        Assert.assertEquals((Float)20f,max);
+    public void givenFirstFloatAsMaximum_ShouldReturnFirstFloatAsMaximum() {
+        Float max1 = findMax.findMaxValue(20f, 15f, 10f);
+        Assert.assertEquals((Float) 20f, max1);
+    }
+
+    @Test
+    public void givenSecondFloatAsMaximum_ShouldReturnSecondFloatAsMaximum() {
+        Float max1 = findMax.findMaxValue(20f, 30f, 10f);
+        Assert.assertEquals((Float) 30f, max1);
     }
 }
