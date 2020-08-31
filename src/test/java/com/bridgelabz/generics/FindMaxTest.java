@@ -46,4 +46,9 @@ public class FindMaxTest {
         Float max1 = findMax.findMaxValue(20f, 30f, 40f);
         Assert.assertEquals((Float) 40f, max1);
     }
+    @Test
+    public void givenFirstStringAsMaximum_ShouldReturnFirstStringAsMaximum() {
+        String max2 = findMax.findMaxValue("tendulkar","virat","dhoni" );
+        Assert.assertEquals((String)"tendulkar" , max2);
+    }
 }
