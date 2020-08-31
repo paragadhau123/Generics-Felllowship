@@ -41,4 +41,9 @@ public class FindMaxTest {
         Float max1 = findMax.findMaxValue(20f, 30f, 10f);
         Assert.assertEquals((Float) 30f, max1);
     }
+    @Test
+    public void givenThirdFloatAsMaximum_ShouldReturnThirdFloatAsMaximum() {
+        Float max1 = findMax.findMaxValue(20f, 30f, 40f);
+        Assert.assertEquals((Float) 40f, max1);
+    }
 }
